@@ -1,0 +1,70 @@
+/* src/style.css */
+
+/* Importa las directivas de Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aquí puedes agregar tus estilos personalizados si es necesario */
+@import "tailwindcss";
+/* styles.css o el archivo donde gestionas tus estilos */
+
+@font-face {
+    font-family: 'DMSans';
+    src: url('/path/to/fonts/DMSans-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'DMSans';
+    src: url('/path/to/fonts/DMSans-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'DMSans';
+    src: url('/path/to/fonts/DMSans-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .text__preset1-mob{
+    font-size: 2.5rem;
+    line-height: 100%;
+    letter-spacing: -1px;
+    font-weight: 700;
+  }
+  
+  .text__preset1-desk{
+    font-size: 4rem;
+    line-height: 100%;
+    letter-spacing: -1px;
+    font-weight: 700;
+  }
+  .text__preset2{
+    font-size: 1.5rem;
+    line-height: 130%;
+    letter-spacing: -1px;
+    font-weight: 600;
+  }
+  .text__preset3{
+    font-size: 1.25rem;
+    line-height: 140%;
+    letter-spacing: -0.6px;
+  }
+  .text__preset4{
+    font-size: 1rem;
+    line-height: 130%;
+    letter-spacing: -0.6px;
+  }
+  .container__next {
+    transition: all 0.3s ease-in-out; /* Animación sobre max-height */
+    max-height: 0; /* Empieza con altura 0, el contenido está oculto */
+    overflow: hidden; /* El contenido fuera del contenedor será recortado */
+}
+
+.container__next.active {
+    max-height: 1000px; /* Establece un valor grande para max-height, lo suficientemente alto para mostrar todo el contenido */
+}

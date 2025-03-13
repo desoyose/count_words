@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/src/styles.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/public/images/favicon-32x32.ico" type="image/x-icon">
+  <title>Mi Proyecto</title>
+</head>
+
+<body
+  class="bg-[url(/public/images/bg-light-theme.webp)] font-dmsans dark:bg-[url(/public/images/bg-dark-theme.webp)] dark:text-custom_neutral-100">
+  <header class="max-w-[900px] mx-auto">
+    <div class="justify-between flex flex-row py-8 px-4 items-center max-w-[900px] self-center">
+      <div class="h-[40px]">
+        <img class="object-cover" src="/public/images/logo-light-theme.svg" alt="">
+      </div>
+      <div
+        class="w-[44px] h-[44px] flex justify-center items-center bg-custom_neutral-100 dark:bg-custom_neutral-700 relative">
+        <img
+          class="moon mode w-[22px]  h-[22px] absolute top-[50%] dark:hidden cursor-pointer left-[50%] translate-x-[-50%] translate-y-[-50%]"
+          src="/public/images/icon-moon.svg" alt="">
+        <img
+          class="sun mode w-[22px]  h-[22px] absolute top-[50%] dark:block cursor-pointer hidden left-[50%] translate-x-[-50%] translate-y-[-50%]"
+          src="/public/images/icon-sun.svg" alt="">
+      </div>
+    </div>
+  </header>
+  <main class="max-w-[900px] mx-auto">
+    <section class="px-8 flex flex-col justify-center max-w-[990px] self-center">
+      <div class="">
+        <h1 class="text__preset1-mob md:text__preset1-desk text-center text-pretty mb-12">Analyze your text in
+          real-time.</h1>
+
+        <textarea id="textarea"
+          class="text-start w-full p-5 mb-2 bg-custom_neutral-100 border rounded-xl dark:placeholder:text-custom_neutral-200 dark:bg-custom_neutral-800 transition-all duration-200 min-h-[200px]  ease-linear dark:border-custom_neutral-700 dark:text-custom_neutral-200  border-cyan-200 text-gray-800 resize-none focus:outline-none focus:ring-0 overflow-hidden placeholder:text-custom_neutral-700 placeholder:text__preset3"
+           placeholder="Start typing here… (or paste your text)"></textarea>
+      </div>
+      <div class="alert  hidden flex-row items-center my-4">
+        <img src="/public/images/icon-info.svg" alt="">
+        <span class="text-custom__orage-800 text__preset4 ml-2">Limit reached! Your text exceeds 300 characters.</span>
+
+      </div>
+
+      <div class=" mb-24 w-full flex flex-col gap-3 md:flex-row md:justify-between">
+        <div class="container__input  flex flex-col gap-3 md:flex-row">
+          <div class="flex flex-row items-center align-middle">
+            <input
+              class="appearance-none w-5 h-5 relative
+              flex-row before:absolute before:top-0 before:checked:text-custom_neutral-900 
+            checked:border-transparent flex items-center justify-center before:justify-center before:border before:text-transparent dark:before:checked:bg-Purple-400 cursor-pointer before:border-custom_neutral-700 before:align-middle before:items-center dark:before:text-custom_neutral-900  before:rounded-sm  before:flex
+            before:content-['✔'] before:w-[15px] before:h-[15px] checked:before:flex dark:before:bg-transparent  before:text-xs checked:before:bg-Purple-400 dark:before:checked:shadow-[0px_0px_5px_rgba(192,132,252,0.8)] dark:checked:before:border-custom_neutral-600 before:transition-all before:duration-150 before:ease-linear"
+              id="spaces" type="checkbox" name="spaces">
+            <label class="text__preset4" for="">Exclude Spaces</label>
+          </div>
+          <div class="flex flex-row items-center align-middle">
+            <input
+              class="appearance-none w-5 h-5 relative
+            flex-row before:absolute before:top-0 before:checked:text-custom_neutral-900 
+          checked:border-transparent flex items-center justify-center before:justify-center before:border before:text-transparent dark:before:checked:bg-Purple-400 cursor-pointer before:border-custom_neutral-700 before:align-middle before:items-center dark:before:text-custom_neutral-900  before:rounded-sm  before:flex
+          before:content-['✔'] before:w-[15px] before:h-[15px] checked:before:flex dark:before:bg-transparent  before:text-xs checked:before:bg-Purple-400 dark:before:checked:shadow-[0px_0px_5px_rgba(192,132,252,0.8)] dark:checked:before:border-custom_neutral-600 before:transition-all before:duration-150 before:ease-linear"
+              id="limit" type="checkbox" name="limit">
+            <label class="text__preset4" for="limit">Set Character Limit</label>
+          </div>
+          <div>
+            <span class="box__limit hidden px-2 py-1 border border-custom_neutral-800 text-custom_neutral-900 text__preset4 rounded-md dark:border-custom_neutral-600 dark:text-custom_neutral-0">300</span>
+          </div>
+
+        </div>
+        <div class="box__input">
+          <div class="text__preset4">
+            <p>Approx. reading time:<span class="time"> </span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="px-8 flex flex-col gap-4 md:flex-row md:justify-between max-w-[990px] self-center">
+      <div
+        class="card flex flex-row justify-start pl-6  bg-Purple-400 rounded-xl overflow-hidden h-[130px] items-center relative md:w-[33%]">
+        <div class="flex flex-col gap-2">
+          <span class="text__preset1-mob md:text__preset1-desk characters dark:text-custom_neutral-900">00</span>
+          <span class="text__preset3 dark:text-custom_neutral-900">Total characters</span>
+        </div>
+
+        <div class="absolute top-0 right-[-3.2rem]">
+          <img src="/public/images/pattern-character-count.svg" alt="">
+        </div>
+
+      </div>
+      <div
+        class="card flex flex-row justify-start pl-6  bg-custom_yellow rounded-xl overflow-hidden h-[130px] items-center relative md:w-[33%]">
+        <div class="flex flex-col gap-2">
+          <span class="text__preset1-mob md:text__preset1-desk words dark:text-custom_neutral-900">00</span>
+          <span class="text__preset3 dark:text-custom_neutral-900">Word Count</span>
+        </div>
+
+        <div class="absolute top-0 right-[-3.2rem]">
+          <img src="/public/images/pattern-word-count.svg" alt="">
+        </div>
+
+      </div>
+      <div
+        class="card flex flex-row justify-start pl-6  bg-custom__orage-500 rounded-xl overflow-hidden h-[130px] items-center relative md:w-[33%]">
+        <div class="flex flex-col gap-2">
+          <span class="text__preset1-mob md:text__preset1-desk sentences dark:text-custom_neutral-900">00</span>
+          <span class="text__preset3 dark:text-custom_neutral-900">Sentence Count</span>
+        </div>
+
+        <div class="absolute top-0 right-[-3.2rem]">
+          <img src="/public/images/pattern-sentence-count.svg" alt="">
+        </div>
+
+      </div>
+    </section>
+    <section class="px-8 my-8">
+      <div class="mb-6">
+        <h3 class="text__preset2 dark:text-custom_neutral-200">Letter Density</h3>
+      </div>
+      <div class="container__density flex flex-col gap-4">
+
+      </div>
+      <div class="my-4">
+        <span class="empty__text flex dark:text-custom_neutral-200">No characters found. Start typing to see letter density.</span>
+        <span
+          class="see__more relative text__preset3 opacity-0 cursor-pointer transition-all duration-200 ease-linear after:content-['⌵'] after:rotate-0 after:absolute after:font-[500] after:top-[50%] after:-right-4 after:-translate-y-1/2">See
+          more</span>
+      </div>
+      <div class="container__next transition-all duration-300 ease-linear flex flex-col gap-4">
+
+      </div>
+      <div class="my-4">
+        <span
+          class="see__less relative text__preset3 cursor-pointer transition-all ease-linear hidden after:content-['⌵'] after:rotate-180 after:absolute after:font-[500] after:top-[50%] after:left-20 after:-translate-y-1/2">
+          See less
+        </span>
+      </div>
+    </section>
+
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
